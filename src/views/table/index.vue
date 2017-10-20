@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
 
-    <el-row class="divcss" :data="list" v-for="value in list" v-loading.body="listLoading" element-loading-text="拼命加载中" border fit highlight-current-row>
+    <el-row class="divcss" :data="user_list" v-for="value in user_list" v-loading.body="listLoading" element-loading-text="拼命加载中" border fit highlight-current-row>
       <el-card :body-style="{ padding: '0px'}" class="card">
         <img class="image" :src="value['head_image']" width="80" height="80">
         <el-tag type="primary" class="tag">user_id &nbsp&nbsp：{{value['user_id']}}</el-tag>
@@ -38,7 +38,7 @@
 
     data() {
       return {
-        list: null,
+        user_list: null,
         listLoading: true,
         totals: 0
       }
@@ -70,7 +70,7 @@
       fetchData(params) {
         this.listLoading = true;
         getUserList(params).then(response => {
-          this.list = response.detail.list;
+          this.user_list = response.detail.list;
           this.totals = response.detail.totals;
           this.listLoading = false;
 
