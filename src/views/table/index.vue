@@ -11,7 +11,7 @@
         <el-tag type="primary" class="tag">实名认证：{{value['real_name_auth']}}</el-tag>
         <el-tag type="primary" class="tag">红牛认证：{{value['red_bull_auth']}}</el-tag>
         <el-tag type="primary" class="tag">金牛认证：{{value['gold_bull_auth']}}</el-tag>
-        <el-button id="button" class="button" type="info" @click="balance(value['focus_count'])">余额
+        <el-button id="button" class="button" type="info" @click="balance(value.user_id)">余额
         </el-button>
       </el-card>
     </el-row>
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-  import {getUserList} from '@/api/table';
+  import {getUserList, getUserBank} from '@/api/table';
 
   export default {
 
@@ -55,8 +55,16 @@
         })
       },
 
-      balance: function (message) {
-        alert("余额:  " + message);
+      balance: function (user_id) {
+        console.log(user_id)
+        // this.listLoading = true;
+        getUserBank({
+          user_id: user_id
+        }).then(response => {
+          // this.listLoading = false;
+          console.log(response)
+          alert(response.detail.balance)
+        })
       },
 
       fetchData(params) {

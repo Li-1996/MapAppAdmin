@@ -16,4 +16,12 @@ export function getUserList(params) {
   })
 }
 
+export function getUserBank(params) {
+  return fetch({
+    url: '/get_user_bank',
+    method: 'get',
+    params
+  })
+}
+
 
