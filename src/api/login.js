@@ -1,14 +1,15 @@
-import fetch from '@/utils/fetch';
+import fetch from '@/utils/fetch'
+import Qs from 'qs'
 
 export function login(phone, password) {
   return fetch({
     url: '/login',
     method: 'post',
-    data: {
-      phone,
-      password
-    }
-  });
+    data: Qs.stringify({
+      phone: phone,
+      password: password
+    })
+  })
 }
 
 export function getInfo(token) {
@@ -16,15 +17,12 @@ export function getInfo(token) {
     url: '/admin_user_info',
     method: 'get',
     params: { token }
-  });
+  })
 }
 
 export function logout() {
   return fetch({
     url: '/logout',
     method: 'post'
-  });
+  })
 }
-
-
-
