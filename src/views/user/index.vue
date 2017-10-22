@@ -67,13 +67,15 @@
         <User :user-info="user_info"></User>
       </el-col>
     </el-row>
-    <el-pagination
-      @current-change="handleCurrentChange"
-      :page-size="page_size"
-      :current-page.sync="page"
-      layout="total, prev, pager, next, jumper"
-      :total="totals">
-    </el-pagination>
+    <div style="text-align:center">
+      <el-pagination
+        @current-change="handleCurrentChange"
+        :page-size="page_size"
+        :current-page.sync="page"
+        layout="total, prev, pager, next, jumper"
+        :total="totals">
+      </el-pagination>
+    </div>
   </div>
 </template>
 

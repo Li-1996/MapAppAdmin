@@ -11,45 +11,47 @@
           {{scope.row.id}}
         </template>
       </el-table-column>
-      <el-table-column label="描述" width="110" align="center">
+      <el-table-column label="描述" align="center">
         <template scope="scope">
           <span>{{scope.row.describe}}</span>
         </template>
       </el-table-column>
-      <el-table-column label="版本号" width="110" align="center">
+      <el-table-column label="版本号" align="center">
         <template scope="scope">
           <span>{{scope.row.app_version}}</span>
         </template>
       </el-table-column>
-      <el-table-column label="更新类型" width="110" align="center">
+      <el-table-column label="更新类型" align="center">
         <template scope="scope">
           {{scope.row.update_type}}
         </template>
       </el-table-column>
-      <el-table-column label="设备类型" width="110" align="center">
+      <el-table-column label="设备类型" align="center">
         <template scope="scope">
           {{scope.row.device_type}}
         </template>
       </el-table-column>
-      <el-table-column label="URL" width="110" align="center">
+      <el-table-column label="URL" align="center">
         <template scope="scope">
           {{scope.row.url}}
         </template>
       </el-table-column>
-      <el-table-column label="发布状态" width="110" align="center">
+      <el-table-column label="发布状态" align="center">
         <template scope="scope">
           {{scope.row.is_publish}}
         </template>
       </el-table-column>
     </el-table>
 
-    <el-pagination
-      @current-change="handleCurrentChange"
-      :page-size="page_size"
-      :current-page.sync="page"
-      layout="total, prev, pager, next, jumper"
-      :total="totals">
-    </el-pagination>
+    <div style="text-align:center">
+      <el-pagination
+        @current-change="handleCurrentChange"
+        :page-size="page_size"
+        :current-page.sync="page"
+        layout="total, prev, pager, next, jumper"
+        :total="totals">
+      </el-pagination>
+    </div>
   </div>
 </template>
 
