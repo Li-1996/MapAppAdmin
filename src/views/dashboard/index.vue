@@ -2,18 +2,15 @@
   <div class="dashboard-container">
     <div class='dashboard-text'>昵称:{{name}}</div>
     <div class='dashboard-text'>权限:<span v-for='role in roles' :key='role'>{{role}}</span></div>
-    <CreateVersion @finishCreateVersion="finishCreateVersion"></CreateVersion>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import CreateVersion from '@/components/create-version'
 
 export default {
   name: 'dashboard',
   components: {
-    CreateVersion
   },
   data () {
     return {
