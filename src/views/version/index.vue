@@ -63,7 +63,7 @@
     </div>
 
     <!--删除版本对话框-->
-    <el-dialog title="删除版本" :visible.sync="deleteDialogVisible" style="z-index: 10">
+    <el-dialog title="删除版本" :visible.sync="deleteDialogVisible">
       <el-form :model="deleteVersionInfo" :label-width="formLabelWidth">
         <el-form-item label="ID" >
           <el-input v-model="deleteVersionInfo.id" auto-complete="off" :disabled="true"></el-input>
