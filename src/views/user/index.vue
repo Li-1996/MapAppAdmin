@@ -83,7 +83,7 @@
 import { getUser, getUserBank } from '@/api/user'
 import User from '@/components/user'
 import ElRow from "element-ui/packages/row/src/row";
-console.
+
 export default {
   data() {
     return {
